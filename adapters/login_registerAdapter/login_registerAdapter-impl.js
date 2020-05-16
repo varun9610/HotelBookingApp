@@ -7,11 +7,11 @@ function register(fName,User,Email,phnumber,password) {
 }
 
 
-var loginStatement = WL.Server.createSQLStatement("SELECT uname from user_detail() WHERE password = ? ");
+var loginStatement = WL.Server.createSQLStatement("SELECT uname from user_detail(username) WHERE password = ? ");
 function login(password) {
 	return WL.Server.invokeSQLStatement({
 		preparedStatement : loginStatement,
-		parameters : [Password]
+		parameters : [password]
 	});
 }
 
