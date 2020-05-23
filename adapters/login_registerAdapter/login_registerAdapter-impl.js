@@ -16,7 +16,7 @@ function login(password) {
 }
 
 
-var bookingS = WL.Server.createSQLStatement("INSERT INTO staydetails(checindate,roomtype,totalguest) VALUES(?,?,?) WHERE username = ? ");
+var bookingS = WL.Server.createSQLStatement("UPDATE staydetails(checindate,roomtype,totalguest) VALUES(?,?,?) WHERE username = ? ");
 function bookingS(checindate,roomtype,totalguest,username) {
 	return WL.Server.invokeSQLStatement({
 		preparedStatement : bookingS,
